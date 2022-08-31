@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <div>
+    <div className='menu'>
       {  <ul>
                 <li><NavLink className={(element) => element.isActive ? 'selected' : '' } to="/">Home</NavLink></li>
                 <li><NavLink className= {(element)=> element.isActive ? 'selected' : '' } to="contact">New</NavLink></li>
