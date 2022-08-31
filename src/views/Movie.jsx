@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Movie() {
  
  const {id} = useParams();
- const [movieDet, setMovieDet] = useParams();
+ const [movieDet, setMovieDet] = useState(null);
  const navigate = useNavigate();
 
 
@@ -24,23 +24,21 @@ export default function Movie() {
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:8000/api/v1/movies/${id}`);
-      navigate('/beers');
+      navigate('/');
     } 
     catch (error) {
       console.error(error)
     }
 }
 
-  //const params = useParams();
-  //console.log(params)
   return (
-    <div>
+
+     <div> 
       
       <h2>Movie details</h2>
-      {!movieDet && <p>Loading</p>}
       {movieDet && (
+      
         <div className='movie-details'>
-
           <img src={movieDet.image} alt="{movieDet.title}"></img>
           <div className='movie-info'>
               <h3>Title: {movieDet.title}</h3>

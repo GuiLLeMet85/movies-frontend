@@ -1,35 +1,35 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios";
-import {Link, Outlet} from "react-router-dom"
+import {Outlet} from "react-router-dom"
 import Card from '../components/Card';
 
 
-export default function Beers(){
+export default function Movie(){
 
-    const [movies, setMovies]= useState([]);
+    const [movies, setMovies]= useState(null);
 
     useEffect(() => {
-        const getData = async () => {
-          try {
-            const response = await axios.get('http://localhost:8000/api/v1/movies')
-            setMovies(response.data.data);
-          } catch (error) {
-            console.error(error)
-          }
+      const getData = async () => {
+        try {
+          const response = await axios.get('http://localhost:8000/api/v1/movies')
+          //console.log(response)
+          setMovies(response.data.data);
+        } catch (error) {
+          console.error(error)
         }
-        getData();
-      }, [])
+      }
+      getData();
+    }, [])
 
       return (
           <div className="sect-beers"> 
               <h1>Movies</h1> 
-              {!movies && <p> Loading</p>}
+      
             
-              {movies.length > 0 && movies.map(movie => {  
+              {movies && movies.map(movie => {  
                 return <Card key={movie._id} movie={movie} />
               })} 
-              <button> Edit the movie</button>
-              <button> Delete the movie</button>
+           
               <Outlet />
           </div>
       )
