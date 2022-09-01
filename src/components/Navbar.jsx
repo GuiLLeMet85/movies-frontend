@@ -6,8 +6,8 @@ export default function Navbar() {
     <div className='menu'>
       {  <ul>
                 <li><NavLink className={(element) => element.isActive ? 'selected' : '' } to="/">Home</NavLink></li>
-                <li><NavLink className= {(element)=> element.isActive ? 'selected' : '' } to="contact">New</NavLink></li>
-                <li><NavLink className={(element) => element.isActive ? 'selected' : '' } to="projects">Go back</NavLink></li>
+                <li><NavLink className= {(element)=> element.isActive ? 'selected' : '' } to="new">New</NavLink></li>
+                <li><NavLink className={(element) => element.isActive ? 'selected' : '' } to="movies">Go back</NavLink></li>
             </ul>/* Should use react-router-dom NavLinks to browse through the different pages */}
     </div>
   )

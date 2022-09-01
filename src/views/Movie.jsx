@@ -32,13 +32,16 @@ export default function Movie() {
 }
 
   return (
+    
 
-     <div> 
+     <div className="sect-beers">
       
       <h2>Movie details</h2>
+      
+      
       {movieDet && (
       
-        <div className='movie-details'>
+        <div className="beer-img">  
           <img src={movieDet.image} alt="{movieDet.title}"></img>
           <div className='movie-info'>
               <h3>Title: {movieDet.title}</h3>

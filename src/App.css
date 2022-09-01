@@ -1,5 +1,9 @@
-h1 {
+h1, h2 {
   text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 .menu{
@@ -21,6 +25,8 @@ li {
   align-content: center;
   background: white;
   padding: 1vh 1vw;
+  border-radius: 10px;
+  width: 20vw;
 }
 
 .selected {
@@ -36,5 +42,32 @@ li {
 
 .beer-img img {
   width: 70vw;;
+}
+
+form.add-form {
+  display: flex;
+  flex-direction: column;
+  margin: 2vh auto;
+  width: 70vw;
+}
+
+input[type="text"], input[type="number"] {
+  padding: 1.5vh 2vw;
+  margin: 1.5vh 0;
+}
+
+input.description-input {
+  height: 9vh;
+}
+
+input {
+  border-radius: 10px;
+}
+
+form.add-form button {
+  border-radius: 10px;
+  height: 8vh;
+  margin-top: 3vh;
+  background-color:  rgb(16, 237, 253);
 }
 
