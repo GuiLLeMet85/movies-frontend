@@ -23,7 +23,7 @@ export default function Movie() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8000/api/v1/movies/${id}`);
+      await axios.delete(`http://localhost:8000/api/v1/movies/${id}`)
       navigate('/');
     } 
     catch (error) {
