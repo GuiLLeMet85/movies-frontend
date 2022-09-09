@@ -15,7 +15,7 @@ export default function New() {
   })
   
   const handleChange = (e) => {
-    const conditionalValue = e.target.name === 'year' ? parseInt(e.target.value) : e.target.value;
+    const conditionalValue = e.target.name === 'year' && e.target.name === 'duration' ? parseInt(e.target.value) : e.target.value;
     console.log(conditionalValue)
     setNewMovie(prev => {
       return {
